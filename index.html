@@ -305,7 +305,45 @@ git log
         ❌ Bad: "Fixed stuff" or "Updates"
       </div>
 
-      <h2><span class="section-number">8.</span> Branches</h2>
+      <h2>
+        <span class="section-number">8.</span> Checking Out Specific Commits
+      </h2>
+      <p>
+        Git allows you to travel back in time to view or work with previous
+        versions of your code. You can checkout a specific commit to see what
+        your project looked like at that point in history.
+      </p>
+
+      <h3>Why checkout specific commits?</h3>
+      <ul>
+        <li>Investigate when a bug was introduced</li>
+        <li>Review the state of code at a specific point in time</li>
+        <li>Recover lost code from a previous version</li>
+        <li>Create a new branch from a historical point</li>
+      </ul>
+
+      <h3>Finding Commits</h3>
+      <pre><code># View commit history with full details
+git log
+</code></pre>
+
+      <h3>Checking Out a Specific Commit</h3>
+      <pre><code># Checkout using commit hash (first 7 characters is enough)
+git checkout abc1234
+
+# Checkout using full commit hash
+git checkout abc1234567890abcdef1234567890abcdef12345
+
+# View information about a specific commit
+git show abc1234</code></pre>
+
+      <div class="warning">
+        <strong>Important:</strong> When you checkout a specific commit, you
+        enter a "detached HEAD" state. This means you're not on any branch. Any
+        new commits you make won't belong to any branch and might be lost.
+      </div>
+
+      <h2><span class="section-number">9.</span> Branches</h2>
       <p>
         Branches allow you to create separate lines of development. Think of it
         as creating a copy of your code where you can experiment without
@@ -335,7 +373,7 @@ git switch -c feature-login
 git branch
 </code></pre>
 
-      <h2><span class="section-number">9.</span> Switching Branches</h2>
+      <h2><span class="section-number">10.</span> Switching Branches</h2>
       <p>
         Move between different branches to work on different features or
         versions.
@@ -343,21 +381,20 @@ git branch
 
       <pre><code># Switch to existing branch
 git checkout feature-login
+
 # or (newer syntax)
 git switch feature-login
 
 # Switch to main/master branch
 git checkout main
-
-# Switch to previous branch
-git checkout -</code></pre>
+</code></pre>
 
       <div class="warning">
         <strong>Important:</strong> Make sure to commit or stash your changes
         before switching branches, or Git will warn you.
       </div>
 
-      <h2><span class="section-number">10.</span> Merging Branches</h2>
+      <h2><span class="section-number">11.</span> Merging Branches</h2>
       <p>Combine changes from one branch into another.</p>
 
       <pre><code># Switch to branch you want to merge INTO
@@ -369,7 +406,7 @@ git merge feature-login
 # Delete branch after merging
 git branch -d feature-login</code></pre>
 
-      <h2><span class="section-number">11.</span> What are Merge Conflicts?</h2>
+      <h2><span class="section-number">12.</span> What are Merge Conflicts?</h2>
       <p>
         Conflicts occur when Git can't automatically merge changes because two
         people modified the same part of the same file differently.
@@ -419,7 +456,7 @@ const name = "Bob";
       </ul>
 
       <h2>
-        <span class="section-number">12.</span> Working with Remote Repositories
+        <span class="section-number">13.</span> Working with Remote Repositories
       </h2>
       <pre><code># View remote repositories
 git remote -v
@@ -443,7 +480,7 @@ git push -u origin feature-login
 git push</code></pre>
 
       <h2>
-        <span class="section-number">13.</span> What is a Pull Request (PR)?
+        <span class="section-number">14.</span> What is a Pull Request (PR)?
       </h2>
       <p>
         A Pull Request is a GitHub feature (not Git itself) that lets you tell
@@ -472,7 +509,7 @@ git push</code></pre>
         <code>git pull</code> - common confusion!
       </div>
 
-      <h2><span class="section-number">14.</span> Creating a Pull Request</h2>
+      <h2><span class="section-number">15.</span> Creating a Pull Request</h2>
 
       <div class="workflow-step">
         <strong>Step 1:</strong> Push your branch to GitHub
@@ -526,7 +563,7 @@ git push</code></pre>
         </ul>
       </div>
 
-      <h2><span class="section-number">15.</span> Collaboration Workflow</h2>
+      <h2><span class="section-number">16.</span> Collaboration Workflow</h2>
       <p>How teams work together on the same project:</p>
 
       <h3>Typical Team Workflow</h3>
@@ -590,7 +627,7 @@ git branch -d feature-user-profile</code></pre>
       </div>
 
       <h2>
-        <span class="section-number">16.</span> Collaboration Best Practices
+        <span class="section-number">17.</span> Collaboration Best Practices
       </h2>
       <div class="tip">
         <ul>
@@ -625,7 +662,7 @@ git branch -d feature-user-profile</code></pre>
       </div>
 
       <h2>
-        <span class="section-number">17.</span> Common Git Commands Cheat Sheet
+        <span class="section-number">18.</span> Common Git Commands Cheat Sheet
       </h2>
 
       <h3>Status and Information</h3>
@@ -663,7 +700,7 @@ git fetch                    # Download remote changes
 git push origin &lt;branch&gt;     # Push branch to remote
 git pull origin &lt;branch&gt;     # Pull branch from remote</code></pre>
 
-      <h2><span class="section-number">18.</span> Hands-on Exercise</h2>
+      <h2><span class="section-number">19.</span> Hands-on Exercise</h2>
       <p>Practice activity for participants:</p>
 
       <ol>
@@ -681,7 +718,7 @@ git pull origin &lt;branch&gt;     # Pull branch from remote</code></pre>
         <li>Merge the PR</li>
       </ol>
 
-      <h2><span class="section-number">19.</span> Common Mistakes to Avoid</h2>
+      <h2><span class="section-number">20.</span> Common Mistakes to Avoid</h2>
       <div class="warning">
         <ul>
           <li>Committing directly to main branch</li>
@@ -694,7 +731,7 @@ git pull origin &lt;branch&gt;     # Pull branch from remote</code></pre>
         </ul>
       </div>
 
-      <h2><span class="section-number">20.</span> Additional Resources</h2>
+      <h2><span class="section-number">21.</span> Additional Resources</h2>
       <ul>
         <li>
           <strong>Official Git Documentation:</strong> https://git-scm.com/doc
